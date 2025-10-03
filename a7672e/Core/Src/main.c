@@ -219,7 +219,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_Delay(500);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -339,8 +339,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, SIM_PWR_KEY_Pin|CS_Pin|RST_Pin|DC_Pin
-                          |BackLinght_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, SIM_PWR_KEY_Pin|GPIO_PIN_1|CS_Pin|RST_Pin
+                          |DC_Pin|BackLinght_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
@@ -349,10 +349,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SIM_PWR_KEY_Pin CS_Pin RST_Pin DC_Pin
-                           BackLinght_Pin */
-  GPIO_InitStruct.Pin = SIM_PWR_KEY_Pin|CS_Pin|RST_Pin|DC_Pin
-                          |BackLinght_Pin;
+  /*Configure GPIO pins : SIM_PWR_KEY_Pin PA1 CS_Pin RST_Pin
+                           DC_Pin BackLinght_Pin */
+  GPIO_InitStruct.Pin = SIM_PWR_KEY_Pin|GPIO_PIN_1|CS_Pin|RST_Pin
+                          |DC_Pin|BackLinght_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
